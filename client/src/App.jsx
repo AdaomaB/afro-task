@@ -22,6 +22,8 @@ import FreelancerOnboarding from './pages/FreelancerOnboarding';
 import ClientOnboarding from './pages/ClientOnboarding';
 import ProjectWorkspace from './pages/ProjectWorkspace';
 import LandingPage from './pages/LandingPage';
+import WhyAfroTask from './pages/WhyAfroTask';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -33,7 +35,8 @@ function App() {
           <Route path="/welcome" element={<WelcomePage />} />
           <Route path="/signup/:role" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
-          
+          <Route path="/why-afro-task" element={<WhyAfroTask />} />
+
           {/* Onboarding Routes */}
           <Route path="/freelancer/onboarding" element={
             <PrivateRoute role="freelancer">
@@ -157,6 +160,7 @@ function App() {
               <AdminDashboard />
             </PrivateRoute>
           } />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </AuthProvider>
     </Router>
